@@ -8,11 +8,10 @@ object fibonacciSeq {
       List(0, 1)
     } else {
       val fiboList = fibonacci(n - 1)
+      //println(n)
       fiboList :+ (fiboList(n - 2) + fiboList(n - 3))
     }
   }
-
-
   def main(args : Array[String]) : Unit = {
     val fiboSequence = fibonacci(10)
     println(fiboSequence.mkString(", "))
