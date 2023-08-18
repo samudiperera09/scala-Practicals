@@ -1,11 +1,13 @@
+import scala.io.StdIn.readInt
 object patternMatching {
-  def patternMatch(number : Int) : String = number match{
-    case num if num <= 0 => "Negative/Zero"
-    case num if num%2 == 0 => "Even Number"
-    case num if num%2 == 1 => "Odd Number"
+  val patternMatching = (num: Int) => {
+    if (num <= 0) "Negative or Zero";
+    else if (num % 2 == 0) "Even";
+    else "Odd"
   }
-
-  def main(args : Array[String]) : Unit = {
-    println(patternMatch(args(0).toInt))
-  }
+  def main (args: Array[String]) : Unit = {
+    print("Enter a number: ");
+    var input = readInt();
+    println(patternMatching(input));
+    }
 }

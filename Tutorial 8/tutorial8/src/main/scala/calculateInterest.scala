@@ -1,20 +1,13 @@
 object calculateInterest {
-  def interest(amount : Int): Double = {
-    if(amount <= 20000){
-      return (amount/100)*2
-    }
-    else if(amount <= 200000){
-      return (amount/100)*4
-    }
-    else if(amount <= 2000000){
-      return (amount/100)*3.5
-    }
-    else{
-      return (amount/100)*6.5
-    }
+  val calculateInterest = (deposit: Double) => {
+    if (deposit <= 20000) deposit * 0.02
+    else if (deposit <= 200000) deposit * 0.04
+    else if (deposit <= 2000000) deposit * 0.035
+    else deposit*0.065
   }
-
-  def main(args : Array[String]) : Unit = {
-    println("Your interest amount for the year is " + interest(25000))
+  def main(args: Array[String]): Unit = {
+    var amount = 30000;
+    var interest = calculateInterest(amount);
+    println("Interest = " + "%.2f".format(interest));
   }
 }
